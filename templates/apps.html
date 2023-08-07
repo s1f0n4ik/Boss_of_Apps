@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block head %}
+<!--<link rel="stylesheet" href="style.css">-->
+<style>
+    .table{
+    border: 1px solid #eee;
+    table-layout: fixed;
+    width: 624px;
+    height: 379px;
+    margin-bottom: 20px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    }
+    .table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #a675b3;
+    border: 1px solid #dddddd;
+    }
+    .table td{
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    text-align: left;
+    }
+    .table tbody tr:nth-child(odd){
+    background: #fff;
+    }
+    .table tbody tr:nth-child(even){
+    background: #F7F7F7;
+    }
+    .container {
+    width: 400px;
+    }
+
+</style>
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>App</th>
+                <th>Status</th>
+                <th>Time</th>
+                <th>id</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in result.items() %}
+            <tr>
+                <td> {{ value[0] }} </td>
+                <td> {{ value[1] }} </td>
+                <td> {{ value[2] }} </td>
+                <td> {{ value[3] }} </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+</div>
+{% endblock content %}

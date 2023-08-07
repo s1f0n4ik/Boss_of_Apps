@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script>
+        const AppsDict = () => {
+            window.location.href = '/pages/base/apps';
+        }
+    </script>
+    <script>
+        const WinDict = () => {
+            window.location.href = '/pages/base/windows';
+        }
+    </script>
+    <script>
+        const CloseWin = (key) => {
+            window.location.href = '/pages/base/windows/close_' + key;
+        }
+    </script>
+    <script>
+        const CloseWin = (key) => {
+            window.location.href = '/pages/base/windows/close_window/'+key;
+        }
+    </script>
+    <script>
+        const CloseAllWin = () => {
+            window.location.href = '/pages/base/windows/close_all_window';
+        }
+    </script>
+    <style>
+        .buttons {
+        width: 150px;
+        height: 100px;
+        text-decoration: none;
+        padding-top: 9px;
+        color: #a675b3;
+        text-align: center;
+        line-height: 20px;
+        display: block;
+        margin: 20px auto;
+        font: normal 17px arial;
+        }
+
+        .buttons:not(.active) {
+        box-shadow: inset 0 1px 1px rgba(111, 55, 125, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0
+        rgba(0, 0, 0, 0.3), 0 4px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px #150a1e;
+        background-image: linear-gradient(#3b2751, #271739);
+        text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 -1px 0 #311d47;
+        }
+
+        .buttons:not(.active):hover,
+        .buttons:not(.active):focus {
+        transition: color 200ms linear, text-shadow 500ms linear;
+        color: #fff;
+        text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 0 10px rgba(223, 206, 228, 0.4), 0 0 2px #2a153c;
+        }
+        .buttons:not(:hover) {
+        transition: 0.6s;
+        }
+        .head_txt h1:before {
+        content: "";
+        position: absolute;
+        border: 10px solid transparent;
+        border-left: 10px solid rgb(135, 34, 180);
+        top: 23%;
+        margin: 0 auto;
+        left: 15%;
+        }
+
+        .head_txt h1:after {
+        content: "";
+        position: absolute;
+        border: 10px solid transparent;
+        border-right: 10px solid rgb(135, 34, 180);
+        top: 23%;
+        margin: 0 auto;
+        right: 15%;
+        }
+        .main_container {
+            display: flex;
+            flex-direction: column;
+/*            justify-content: space-around;*/
+            align-items: center;
+            height: 90vh;
+            position: relative;
+        }
+    </style>
+    <title>Boss of Apps</title>
+    {% block head %}{% endblock head %}
+
+</head>
+<body bgcolor="cdb9ce">
+
+    <div class="main_container">
+        <div class=head_txt>
+            <h1>Boss of Apps</h1>
+        </div>
+        <div>
+            <button onclick="AppsDict()" class="buttons" aria-current="page">
+                    Вывод всех запущенных процессов
+            </button>
+            <button onclick="WinDict()" class="buttons" aria-current="page">
+                Вывод открытых окон
+            </button>
+            <a class="buttons" aria-current="page" href="customproto://C:/Windows">
+                Выбрать программу для открытия
+            </a>
+        </div>
+        <div>{% block content %}{% endblock content %}</div>
+    </div>
+
+</body>
+</html>
