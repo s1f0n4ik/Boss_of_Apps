@@ -1,9 +1,11 @@
 # Boss_of_Apps
+
+<picture>
+ <img alt="Application and process manager" src="https://avatars.mds.yandex.net/get-images-cbir/936676/d21QxMSuHsOb73qt82VOVw8712/ocr">
+</picture>
+
 Application and process manager
 (in progress)
-<picture>
- <img alt="YOUR-ALT-TEXT" src="https://avatars.mds.yandex.net/get-images-cbir/936676/d21QxMSuHsOb73qt82VOVw8712/ocr">
-</picture>
 
 Основной стек: Python, FastAPI, Postgresql, Nuitka
 
